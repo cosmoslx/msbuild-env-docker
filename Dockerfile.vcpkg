@@ -24,6 +24,7 @@ RUN powershell.exe iwr get.scoop.sh -outfile 'C:\TEMP\install.ps1' && `
 RUN scoop install git
 
 # Install vcpkg
+# bug: https://github.com/ScoopInstaller/Scoop/issues/4792
 RUN mkdir C:\src && `
     cd C:\src && `
     C:\Users\ContainerAdministrator\scoop\apps\git\2.36.0.windows.1\bin\git.exe clone https://github.com/microsoft/vcpkg.git && `
