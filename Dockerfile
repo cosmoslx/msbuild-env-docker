@@ -12,6 +12,7 @@ ADD https://aka.ms/vs/16/release/vs_buildtools.exe C:\TEMP\vs_buildtools.exe
 RUN C:\TEMP\vs_buildtools.exe --quiet --wait --norestart --nocache `
     --installPath C:\BuildTools `
     --add Microsoft.VisualStudio.Workload.VCTools;includeRecommended `
+    --add Microsoft.VisualStudio.Component.Git `
  || IF "%ERRORLEVEL%"=="3010" EXIT 0
 
 # Install package manager

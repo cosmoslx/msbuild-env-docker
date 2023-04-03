@@ -14,14 +14,15 @@ RUN C:\TEMP\vs_buildtools.exe --quiet --wait --norestart --nocache `
     --add Microsoft.VisualStudio.Workload.VCTools `
     --add Microsoft.VisualStudio.Component.VC.CMake.Project `
     --add Microsoft.VisualStudio.Component.VC.Tools.x86.x64 `
+    --add Microsoft.VisualStudio.Component.Git `
  || IF "%ERRORLEVEL%"=="3010" EXIT 0
 
 # Install package manager
-RUN powershell.exe -ExecutionPolicy RemoteSigned `
-  iex (new-object net.webclient).downloadstring('https://get.scoop.sh')
+#RUN powershell.exe -ExecutionPolicy RemoteSigned `
+#  iex (new-object net.webclient).downloadstring('https://get.scoop.sh')
 
 # Install git
-RUN scoop install git
+#RUN scoop install git
 
 # Define the entry point for the docker container.
 # This entry point starts the developer command prompt and launches the PowerShell shell.
